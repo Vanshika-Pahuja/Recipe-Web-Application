@@ -9,5 +9,6 @@ Efficient Recipe Management:Provide tools for users to easily save, organize, an
 
 Technologies used:
 
-Backend: Express.js, Node.js, MongoDB, Next.js
+Backend: Express.js, Node.js, MongoDB
+
 Frontend: HTML, CSS, JAVASCRIPT, EJS
