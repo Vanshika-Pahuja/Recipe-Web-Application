@@ -6,3 +6,8 @@ Advantages of recipe book web application:
 Intuitive Recipe Discovery:Implement advanced search and filtering mechanisms to help users discover recipes based on preferences, dietary needs, and available ingredients.
 Personalized User Experience:Incorporate user profiles and preferences to offer personalized recipe recommendations and suggestions.
 Efficient Recipe Management:Provide tools for users to easily save, organize, and retrieve their favorite recipes, create shopping lists, and plan meals seamlessly.
+
+Technologies used:
+
+Backend: Express.js, Node.js, MongoDB, Next.js
+Frontend: HTML, CSS, JAVASCRIPT, EJS
