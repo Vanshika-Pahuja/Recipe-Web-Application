@@ -1,0 +1,289 @@
+<div class = "row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+    <div class = "col-12 col-lg-6">
+        <img src = "/img/people eating.jpeg" width = "670" height="510" class = "d-block mx-lg-auto img-fluid" Loading ="lazy" alt = "cooking recipes">
+    </div>
+
+
+    <div class = "col-12 col-lg-6"> 
+         <h1 class = "display-5 fw-bold mb-3 justify-content-left"> EXPLORE VARIOUS VARIETIES OF RECIPES </h1>
+         <p class = "lead text-justify">
+            Delving into the world of culinary creations is akin to composing a symphony for the senses. Recipes, the poetic scripts of gastronomy, beckon us into a realm where ingredients dance harmoniously, and flavors unfold like well-rehearsed melodies. Within the elegant embrace of a recipe, each measured step is a note, carefully composed to orchestrate a masterpiece on the palate.
+
+            In the artistry of gastronomy, a recipe is a canvas awaiting the stroke of a culinary brush. It weaves tales of tradition, transcending time and cultural boundaries, while inviting the adept and the novice alike to participate in the timeless ritual of preparing a meal. It transforms ordinary moments into extraordinary experiences, as the alchemy of ingredients melds and metamorphoses into something greater than the sum of its parts.
+
+            A recipe is not merely a list of instructions; it is an ode to exploration, an invitation to embark on a journey of flavors. It whispers secrets of balance, coaxing out the nuances of each component, and encourages the creator to infuse the dish with a personal touch. The act of following a recipe becomes a ritual of connection, linking us to generations past and to the global tapestry of culinary heritage.
+
+
+         </p>
+
+         <div class = "d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href = "/explore-latest" class = "btn btn-primary btn-dark btn-lg px-4 me-md-2"> Explore Latest</a>
+            <a href = "/explore-random" class = "btn btn-outline-secondary  btn-lg px-4 me-md-2"> Explore Random ones </a>
+         </div>
+    </div>
+</div>
+
+
+<!-- categories start -->
+<div class = "row row-cols-2 row-cols-lg-6 g-2 g-log-3 py-4">
+
+    
+
+     <% if(categories != '') { %>
+        <% categories.forEach(function(category, index) {  %>
+    <a href = "/categories/<%- category.name %>" class = "col text-center category__link">
+        <div class = "category__img shadow">
+            <img src = "img/<%- category.image %>" alt = "<%- category.name %>" Loading = "Lazy">
+        </div>
+        <div class = "pt-1"> <%- category.name %> </div>
+    </a>
+    <% }) %>
+    <% } %>
+
+    
+
+    <a href = "/categories" class = "col text-center category__link">
+        <div class = "category__img shadow">
+            <img src = "img/american recipes.jpg" alt = "view other all catgories  " Loading = "Lazy">
+        </div>
+        <div class = "pt-1"> view all  </div>
+    </a>
+
+   
+</div>
+
+
+
+
+<!-- categories end -->
+
+
+<!-- latest start -->
+
+<section class = "pb-4 pt-4">
+    <div class = "d-flex mb-2 align-items-center">
+        <h2> Latest Recipes</h2>
+        <a href = "/explore-latest" class = "ms-auto"> view more </a>
+    </div>
+
+    <div class = "row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+        
+        <% if (food != '') { %> 
+            <% food.latest.forEach(function(recipe, index){ %> 
+        <a href = "/recipe/<%= recipe._id %>" class = "col-text-center category__link">
+            <div class = "category__img category__img--large shadow">
+                <img src = "/uploads/<%= recipe.image %>" alt = "<%= recipe.name %>" Loading = "lazy">
+            </div>
+            <div clas = "pt-1"><%= recipe.name %> </div>
+        </a>
+        <% }) %>
+        <% } %> 
+       
+       
+
+
+
+        
+    
+    </div>
+</section>
+
+
+
+
+
+<!-- latest end -->
+
+<!-- thai recipes start -->
+
+<section class = "pb-4 pt-4">
+    <div class = "d-flex mb-2 align-items-center">
+        <h2> Thai Recipes</h2>
+        <a href = "/categories/Thai" class = "ms-auto"> ..</a>
+    </div>
+
+    <div class = "row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+        
+        <% if (typeof food.thai !== 'undefined' && food.thai.length > 0) { %> 
+            <% food.thai.forEach(function(recipe, index){ %> 
+        <a href = "/recipe/<%= recipe._id %>" class = "col-text-center category__link">
+            <div class = "category__img category__img--large shadow">
+                <img src = "/uploads/<%= recipe.image %>" alt = "<%= recipe.name %>" Loading = "lazy">
+            </div>
+            <div clas = "pt-1"><%= recipe.name %> </div>
+        </a>
+        <% }) %>
+        <% } %>  
+    
+    </div>
+</section>
+
+
+
+
+
+<!-- latest end -->
+
+
+<!-- latest start -->
+
+<section class = "pb-4 pt-4">
+    <div class = "d-flex mb-2 align-items-center">
+        <h2> American Recipes</h2>
+        <a href = "/categories/American" class = "ms-auto"> ..</a>
+    </div>
+
+    <div class = "row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+        
+        <% if (typeof food.american !== 'undefined' && food.american.length > 0) { %> 
+            <% food.american.forEach(function(recipe, index){ %> 
+        <a href = "/recipe/<%= recipe._id %>" class = "col-text-center category__link">
+            <div class = "category__img category__img--large shadow">
+                <img src = "/uploads/<%= recipe.image %>" alt = "<%= recipe.name %>" Loading = "lazy">
+            </div>
+            <div clas = "pt-1"><%= recipe.name %> </div>
+        </a>
+        <% }) %>
+        <% } %> 
+    
+    </div>
+</section>
+
+
+
+
+
+<!-- latest end -->
+
+
+<!-- chinese recipes  start -->
+
+<section class = "pb-4 pt-4">
+    <div class = "d-flex mb-2 align-items-center">
+        <h2> Chinese Recipes </h2>
+        <a href = "/categories/Chinese" class = "ms-auto"> ..</a>
+    </div>
+
+    <div class = "row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+        
+        <% if (typeof food.chinese !== 'undefined' && food.chinese.length > 0) { %> 
+            <% food.chinese.forEach(function(recipe, index){ %> 
+        <a href = "/recipe/<%= recipe._id %>" class = "col-text-center category__link">
+            <div class = "category__img category__img--large shadow">
+                <img src = "/uploads/<%= recipe.image %>" alt = "<%= recipe.name %>" Loading = "lazy">
+            </div>
+            <div clas = "pt-1"><%= recipe.name %> </div>
+        </a>
+        <% }) %>
+        <% } %> 
+        
+    </div>
+</section>
+
+
+<!-- chinese recipes end -->
+
+<!-- indian recipes  start -->
+
+<section class = "pb-4 pt-4">
+    <div class = "d-flex mb-2 align-items-center">
+        <h2> Indian  Recipes </h2>
+        <a href = "/categories/Indian" class = "ms-auto"> ..</a>
+    </div>
+
+    <div class = "row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+        
+        <% if (typeof food.indian !== 'undefined' && food.indian.length > 0) { %> 
+            <% food.indian.forEach(function(recipe, index){ %> 
+        <a href = "/recipe/<%= recipe._id %>" class = "col-text-center category__link">
+            <div class = "category__img category__img--large shadow">
+                <img src = "/uploads/<%= recipe.image %>" alt = "<%= recipe.name %>" Loading = "lazy">
+            </div>
+            <div clas = "pt-1"><%= recipe.name %> </div>
+        </a>
+        <% }) %>
+        <% } %> 
+        
+    </div>
+</section>
+
+
+<!-- indian end -->
+
+<!-- spanish  recipes  start -->
+
+<section class = "pb-4 pt-4">
+    <div class = "d-flex mb-2 align-items-center">
+        <h2> Spanish   Recipes </h2>
+        <a href = "/categories/Spanish" class = "ms-auto"> ..</a>
+    </div>
+
+    <div class = "row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+        
+        <% if (typeof food.spanish !== 'undefined' && food.spanish.length > 0) { %> 
+            <% food.spanish.forEach(function(recipe, index){ %> 
+        <a href = "/recipe/<%= recipe._id %>" class = "col-text-center category__link">
+            <div class = "category__img category__img--large shadow">
+                <img src = "/uploads/<%= recipe.image %>" alt = "<%= recipe.name %>" Loading = "lazy">
+            </div>
+            <div clas = "pt-1"><%= recipe.name %> </div>
+        </a>
+        <% }) %>
+        <% } %> 
+        
+    </div>
+</section>
+
+
+<!-- spanish end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--submit start -->
+<section class = "px-4 py-5 my-5 text-center"> 
+   <img  src = "/img/publish1.jpeg" class = "d-block mx-auto mb-4 img-fluid" alt = "publish your recipe" width = "566" height = "208" Loading = "lazy">
+   <h1 class = "display-5 fw-bold"> Create Your Recipes  </h1>
+
+   <div class = "col-lg-6 mx-auto">
+    <p class = "lead mb-4">
+        Creating all recipes of yours 
+    </p>
+
+    <div class = "d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href = "/submit-recipe" class = "btn btn-primary btn-dark btn-lg">  Create your Recipe </a>
+    </div>
+   </div>
+</section>
+
+
+
+<!--submit end -->
